@@ -7,13 +7,16 @@
 	<meta name="msapplication-tap-highlight" content="no" />
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 	<meta http-equiv="Content-Security-Policy" content="
-			default-src 'self' 'unsafe-inline' ws://10.3.120.85:3000 http://code.jquery.com https://code.jquery.com  https://ssl.gstatic.com gap: data: blob: filesystem: ; 
+			default-src 'self' 'unsafe-inline' ws://10.3.120.85:3000 http://code.jquery.com https://code.jquery.com https://rawgit.com https://rawgithub.com https://ssl.gstatic.com gap: data: blob: filesystem: ; 
 	" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="	crossorigin="anonymous"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="http://code.jquery.com/mobile/git/jquery.mobile-git.js"></script>
+	<script src="https://rawgithub.com/jquery/jquery-ui/1-10-stable/ui/jquery.ui.datepicker.js"></script>
+	<script src="https://rawgithub.com/arschmitz/jquery-mobile-datepicker-wrapper/master/jquery.mobile.datepicker.js"></script>
    <link rel="stylesheet" type="text/css" href="css/index.css">
-	<title>Mobiiliohjelmointi</title>
+	<title>The Great City Race</title>
 </head>
 <body>
 	<div data-role="popup" id="popupMenu" data-transition="pop" data-theme="a">
@@ -31,37 +34,89 @@
 		</div>
          
 		<div role="main" class="ui-content ui-body-a">
-			<div id="paiva"></div> 
-			<p id="koodaaja">Laita tähän nimesi</p>
+			<a href="#loydaPeliSivu"><button class="ui-btn ui-corner-all">Löydä peli</button></a>
+			<a href="#luoPeliSivu"><button class="ui-btn ui-corner-all">Luo uusi peli</button></a>
+			<a href="#instructionPage"><button class="ui-btn ui-corner-all">How the game Works</button></a>
 		</div>
 
 		<div data-role="footer">
-			<h1>Mobiiliohjelmointi</h1>
-		</div>
-	</div>
-		
-	<div data-role="page" id="lista">
-		<div data-role="header">
-			<a href="#popupMenu" data-rel="popup" data-transition="flip" class="ui-btn ui-btn-inline  ui-corner-all ui-icon-bars ui-btn-icon-notext">Menu</a>
-			<h1>Lista</h1>
-		</div>         
-		<div role="main" class="ui-content ui-body-a">	
-   		</div>
-		<div data-role="footer">
-			<h1>Mobiiliohjelmointi</h1>
+			<h1>The Great City Race</h1>
 		</div>
 	</div>
 	
-	<div data-role="page" id="ohje">
-		<div data-role="header">
-			<a href="#popupMenu" data-rel="popup" data-transition="flip" class="ui-btn ui-btn-inline  ui-corner-all ui-icon-bars ui-btn-icon-notext">Menu</a>
-			<h1>Ohje</h1>
-		</div>         
-		<div role="main" class="ui-content ui-body-a">	
-			<p>Tässä erinäisiä ohjeita...</p>
+	<div data-role="page" id="instructionPage">
+         
+		<div role="main" class="ui-content ui-body-a">
+			<p>The object of the game is to Lorem ipsum <br> 
+			The object of the game is to Lorem ipsum <br>
+			The object of the game is to Lorem ipsum <br>
+			<h1>Title of Lorem ipsum </h1><br>
+			The object of the game is to Lorem ipsum <br>
+			The object of the game is to Lorem ipsum <br>
+			The object of the game is to Lorem ipsum </p>
+			<a href="#etusivu"><button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-l">Palaa alkuun</button></a>
 		</div>
+
 		<div data-role="footer">
-			<h1>Mobiiliohjelmointi</h1>
+			<h1>The Great City Race</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="loydaPeliSivu">
+         
+		<div role="main" class="ui-content ui-body-a">
+			<a href="#gameListPage"><button class="ui-btn ui-corner-all">Tulevat pelit</button></a>
+			<button class="ui-btn ui-corner-all">Meneillään olevat pelit</button>
+			<button class="ui-btn ui-corner-all">Menneet pelit</button>
+			<a href="#etusivu"><button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-l">Palaa alkuun</button></a>
+		</div>
+
+		<div data-role="footer">
+			<h1>The Great City Race</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="luoPeliSivu">
+		<div role="main" class="ui-content ui-body-a">
+			<a href="#etusivu"><button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-l">Palaa alkuun</button></a>
+			<label for="nimi">Nimi:</label>
+			<input type="text" name="nimi" id="nimi">
+			<label for="sposti">Kaupunki:</label>
+			<input type="text" name="kaupunki" id="kaupunki">
+			<label for="puhelin">Alkamis päivä:</label>
+			<input type="text" data-role="date" data-inline="true" name="alkamisPaiva" id="alkamisPaiva">
+			<label for="puhelin">Päättymis päivä:</label>
+			<input type="text" data-role="date" data-inline="true" name="paattysmisPaiva" id="paattymisPaiva">
+			<label for="textarea-4">Description:</label>
+   			<textarea cols="40" rows="8" name="textarea-4" id="description"></textarea>
+			<label for="Prize">Prize:</label>
+			<input type="text" name="prize" id="prize">
+			<label for="textarea-4">Choose game locations:</label>
+			<button class="ui-btn ui-corner-all">Luo peli</button>
+		</div>
+
+		<div data-role="footer">
+			<h1>The Great City Race</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="gameListPage">
+         
+		<div role="main" class="ui-content ui-body-a">
+			<a href="#loydaPeliSivu"><button class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-arrow-l">Return</button></a>
+			<ul data-role="listview" data-inset="true">
+				<li data-role="list-divider">Friday, October 8, 2010 <span class="ui-li-count">1</span></li>
+			    <li><a href="">
+			    <h2>Helsinki Grand Games</h2>
+			    <p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong></p>
+			    <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+			        <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+			    </a></li>
+			</ul>
+		</div>
+
+		<div data-role="footer">
+			<h1>The Great City Race</h1>
 		</div>
 	</div>
 	
