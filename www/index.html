@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta http-equiv="Content-Security-Policy" content="
+			default-src 'self' 'unsafe-inline' ws://10.3.120.85:3000 http://code.jquery.com https://code.jquery.com  https://ssl.gstatic.com gap: data: blob: filesystem: ; 
+	" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="	crossorigin="anonymous"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/index.css">
+	<title>Mobiiliohjelmointi</title>
+</head>
+<body>
+	<div data-role="popup" id="popupMenu" data-transition="pop" data-theme="a">
+		<ul data-role="listview">
+			<li><a href="#etusivu" id="etuSivuLinkki">Etusivu</a></li>			
+			<li><a href="#lista" id="listaLinkki">Lista</a></li>
+			<li><a href="#ohje" id="ohjeLinkki">Ohje</a></li>
+		</ul>
+	</div>
+		
+	<div data-role="page" id="etusivu">
+		<div data-role="header">
+			<a href="#popupMenu" data-rel="popup" data-transition="flip" class="ui-btn ui-btn-inline  ui-corner-all ui-icon-bars ui-btn-icon-notext">Menu</a>
+			<h1>jQuery ja jQuery Mobile perusteita</h1>
+		</div>
+         
+		<div role="main" class="ui-content ui-body-a">
+			<div id="paiva"></div> 
+			<p id="koodaaja">Laita tähän nimesi</p>
+		</div>
+
+		<div data-role="footer">
+			<h1>Mobiiliohjelmointi</h1>
+		</div>
+	</div>
+		
+	<div data-role="page" id="lista">
+		<div data-role="header">
+			<a href="#popupMenu" data-rel="popup" data-transition="flip" class="ui-btn ui-btn-inline  ui-corner-all ui-icon-bars ui-btn-icon-notext">Menu</a>
+			<h1>Lista</h1>
+		</div>         
+		<div role="main" class="ui-content ui-body-a">	
+   		</div>
+		<div data-role="footer">
+			<h1>Mobiiliohjelmointi</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="ohje">
+		<div data-role="header">
+			<a href="#popupMenu" data-rel="popup" data-transition="flip" class="ui-btn ui-btn-inline  ui-corner-all ui-icon-bars ui-btn-icon-notext">Menu</a>
+			<h1>Ohje</h1>
+		</div>         
+		<div role="main" class="ui-content ui-body-a">	
+			<p>Tässä erinäisiä ohjeita...</p>
+		</div>
+		<div data-role="footer">
+			<h1>Mobiiliohjelmointi</h1>
+		</div>
+	</div>
+	
+	<script>
+		$(document).one("pagebeforecreate", function () { //Ennen minkä tahansa sivun luomista, tehdään kerran (.one)	
+			$("#popupMenu").enhanceWithin().popup();
+		});
+		
+		$(document).on("pagecreate", "#etusivu", function() { 	//Sivun luonti, tehdään kerran
+				
+		});
+		
+		$(document).on("pagecreate", "#lista", function() {		//Sivun luonti, tehdään kerran
+
+		});
+		
+		$(document).on("pagecreate", "#ohje", function() { 	//Sivun luonti, tehdään kerran
+
+		});
+		
+		$(document).on("pagecontainerbeforeshow", function( event, ui ) {	//Ennen minkä tahansa sivun näyttämistä. (pagebeforeshow is deprecated)	
+			var toPage = ui.toPage[0].id; //Mille sivulle ollaan menossa, palauttaa sivun id:n
+			
+		});
+		
+		$(document).on("pagecontainershow", function( event, ui ) {	//Mikä tahansa sivu näytetään.	
+			var toPage = ui.toPage[0].id; //Mikä sivu on näytetty, palauttaa sivun id:n
+				
+		});
+		
+		$("#xxxxx").on("tap", function() {
+		
+		});
+	</script>
+</body>
+
+</html>
